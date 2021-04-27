@@ -1,4 +1,4 @@
-package com.jpa.bookmanager;
+package com.jpa.bookmanager.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Data                     // @Getter, @Setter, @ToString, @EqualsAndHashCode 포함하고 있음.
 @Builder                  // AllArgsConstructor와 비슷하게 객체를 생성하고 필드값을 주입해주는데 빌더의 형식을 가지고 제공해준다.
 public class User {
-    @NonNull              // 필수  지정값
+    @NonNull              // 필수 지정값
     private String name;
     @NonNull
     private String email;
