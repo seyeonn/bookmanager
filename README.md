@@ -45,3 +45,52 @@
 
 - #### &lt;S extends T&gt; List &lt;S&gt; findAll(Example &lt;S&gt; example);
   + example을 이용하여 findAll.
+
+-----
+
+### PagingAndSortingRepository
+
+- #### Iterable &lt;T&gt; findAll(Sort sort);
+
+- #### Page &lt;T&gt; findAll(Pageable pageable);
+  + Pageable 파라미터를 받아서 한꺼번에 paging을 바로 쉽게 처리.
+
+-----
+
+### CrudRepository
+우리가 사용하는 대부분의 기본적인 메소드들이 정의되어 있음.
+
+- #### &lt;S extends T&gt; S save(S entity);
+  + entity에 대한 저장 제공.
+
+- #### &lt;S extends T&gt; Iterable &lt;S&gt; saveAll(Iterable &lt;S&gt; entities);
+  + List 타입의 entity 묶음들을 가지고 한꺼번에 저장하는 메소드.
+
+- #### Optional &lt;T&gt; findById(ID id);
+  + Optional 객체로 매핑을 해서 리턴해주는 메소드.
+  + getOne과 비슷하나 동작이 조금은 다름.
+
+- #### Boolean existById(ID id);
+  + 해당 객체가 존재하는 여부 확인 메소드.
+
+- #### long count();
+  + 전체 entity 갯수 가져오는 메소드.
+  + Paging 처리 시에 count() 필요.
+
+- #### void deleteById(ID id);
+- #### void delete(T entity);
+  + Id에 해당하는 데이터 삭제 메소드.
+
+-----
+
+### QueryByExampleExecutor
+- #### Example class를 활용한 조회가 좀 더 다양하게 정의
+
+-----
+
+### Repository
+최상위 레퍼지토리
+ 
+- #### 아무것도 없다.
+- #### Jpa에서 사용하는 도메인 레퍼지토리 타입이라는 것을 알려주기 위한 인터페이스.
+- #### 실제로 메서드에 대한 정의는 존재하지 않는다.
