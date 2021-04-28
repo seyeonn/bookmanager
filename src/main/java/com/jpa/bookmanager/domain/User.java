@@ -2,6 +2,9 @@ package com.jpa.bookmanager.domain;
 
 import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Getter             // 이렇게 lombok을 설정해주면 컴파일할 때 DeLombok이라는 절차를 통해서 getter/setter를 자동으로 생성해준다.
@@ -13,7 +16,11 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode        // 자바에서 기본적으로 객체의 동등성을 비교하기 위해서 equals()와 hashCode()를 오버라이딩할 것을 권고하고 있다.
 @Data                     // @Getter, @Setter, @ToString, @EqualsAndHashCode 포함하고 있음.
 @Builder                  // AllArgsConstructor와 비슷하게 객체를 생성하고 필드값을 주입해주는데 빌더의 형식을 가지고 제공해준다.
+@Entity                   // 객체 생성
 public class User {
+    @Id                  // primary key
+    @GeneratedValue      // 순차적으로 데이터 증가시킴.
+    private Long id;
     @NonNull              // 필수 지정값
     private String name;
     @NonNull
